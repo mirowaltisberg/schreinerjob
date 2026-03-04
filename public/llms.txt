@@ -1,0 +1,33 @@
+# schreinerjob.ch
+
+> Die spezialisierte Jobbörse für Schreiner-Fachkräfte in der Schweiz.
+
+schreinerjob.ch ist eine Nischen-Jobbörse für die Schweizer Schreinerbranche. Die Plattform richtet sich an Schreiner EFZ, Zimmermänner, Innenausbauer, Möbelschreiner, Küchenbauer, Fensterbauer, Holzbauer, Werkstattleiter, CNC-Holzbearbeiter, Montageschreiner, Schreinermeister und Bauleiter Holzbau.
+
+## Wichtige Seiten
+
+- [Startseite](https://schreinerjob.ch/): Jobsuche mit Filtern nach Beruf, Ort, Umkreis, Pensum
+- [Schreiner EFZ Jobs Zürich](https://schreinerjob.ch/schreinerjobs/schreiner-efz/zh): Beispiel-Landingpage
+- [Sitemap](https://schreinerjob.ch/sitemap.xml): Alle verfügbaren Seiten
+
+## Kerninformationen
+
+- **Sprache**: Deutsch (Schweizer Markt)
+- **Regionen**: Alle Schweizer Kantone — Zürich, Bern, Basel, Aargau, St. Gallen, Luzern, Solothurn, Zug und weitere
+- **Berufe**: Schreiner EFZ, Zimmermann EFZ, Innenausbauer, Möbelschreiner, Küchenbauer, Fensterbauer, Holzbauer, Werkstattleiter, CNC-Holzbearbeiter, Montageschreiner, Schreinermeister, Bauleiter Holzbau
+- **Lohndaten (Richtwerte, CHF/Jahr)**:
+  - Schreinermeister: 85'000 – 110'000
+  - Bauleiter Holzbau: 85'000 – 110'000
+  - Werkstattleiter: 80'000 – 100'000
+  - Schreiner EFZ: 65'000 – 80'000
+  - Zimmermann EFZ: 65'000 – 82'000
+  - Innenausbauer: 65'000 – 80'000
+  - Möbelschreiner: 62'000 – 78'000
+  - Küchenbauer: 65'000 – 80'000
+  - Fensterbauer: 62'000 – 78'000
+  - CNC-Holzbearbeiter: 68'000 – 85'000
+
+## Kontakt
+
+- **Website**: https://schreinerjob.ch
+- **Branche**: Personalvermittlung / Jobbörse — Schreinerbranche Schweiz

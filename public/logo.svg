@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <!-- Saw icon mark -->
+  <g transform="translate(2, 4)">
+    <path d="M4 32l16-16h12v4H22L8 36z" fill="#8B5E3C"/>
+    <path d="M20 16l-1.5-1.5 1.5-1.5 1.5 1.5-1.5 1.5zm3.5-3.5l-1.5-1.5 1.5-1.5 1.5 1.5-1.5 1.5zm3.5-3.5l-1.5-1.5L31 6l1.5 1.5L31 9z" fill="#8B5E3C" opacity="0.7"/>
+  </g>
+
+  <!-- Text -->
+  <text x="44" y="35" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="28">
+    <tspan fill="#1e293b">Schreiner</tspan><tspan fill="#8B5E3C">job</tspan><tspan fill="#94a3b8" font-weight="400" font-size="22">.ch</tspan>
+  </text>
+</svg>
