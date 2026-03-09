@@ -208,32 +208,66 @@ def clean_description(description: str) -> str:
 
 # Title must contain at least one of these (case-insensitive) to be kept
 RELEVANT_TITLE_KEYWORDS = [
-    # Core carpentry/woodworking trades
-    "schreiner", "schreinerei", "tischler",
-    "zimmermann", "zimmerfrau", "zimmerleute",
-    "holz", "holzbau", "holzbauer", "holzbearbeitung",
-    # Specializations
-    "möbel", "möbelschreiner", "möbelbau",
-    "innenausbau", "innenausbauer",
-    "küchenbau", "küchenbauer", "küchenmonteur",
-    "fensterbau", "fensterbauer", "fenstermonteur",
+    "schreiner",
+    "schreinerei",
+    "tischler",
+    "zimmermann",
+    "zimmerfrau",
+    "zimmerleute",
+    "holz",
+    "holzbau",
+    "holzbauer",
+    "holzbearbeitung",
+    "holzverarbeitung",
+    "möbel",
+    "möbelschreiner",
+    "möbelbau",
+    "möbelmonteur",
+    "innenausbau",
+    "innenausbauer",
+    "ausbau",
+    "küchenbau",
+    "küchenbauer",
+    "küchenmonteur",
+    "fensterbau",
+    "fensterbauer",
+    "fenstermonteur",
     "montageschreiner",
-    "cnc-holz", "cnc holz",
-    # Roles
-    "werkstattleiter", "werkstatt",
-    "bauleiter holzbau", "bauleiter",
-    "schreinermeister", "meister",
-    "projektleiter",
-    "monteur", "montage",
-    # Materials & techniques
-    "massivholz", "holzwerkstoff",
-    "furnieren", "oberflächenbehandlung",
-    "holzkonstruktion",
-    "türen", "fenster",
-    "einbauschrank",
-    # Broader but still relevant
-    "handwerk", "handwerker",
+    "cnc",
+    "cnc-holz",
+    "werkstattleiter",
+    "werkstatt",
+    "bauleiter",
     "polier",
+    "vorarbeiter",
+    "schreinermeister",
+    "meister",
+    "projektleiter",
+    "planer",
+    "monteur",
+    "montage",
+    "massivholz",
+    "holzwerkstoff",
+    "furnieren",
+    "holzkonstruktion",
+    "türen",
+    "fenster",
+    "tür",
+    "einbauschrank",
+    "schrank",
+    "handwerk",
+    "handwerker",
+    "restaur",
+    "messebau",
+    "maschinenführer",
+    "produktion",
+    "techniker",
+    "fachmann",
+    "fachfrau",
+    "fachperson",
+    "umbau",
+    "renovation",
+    "sanierung",
 ]
 
 # Titles containing any of these are always rejected
@@ -370,6 +404,23 @@ DEFAULT_SEARCH_TERMS = [
     "Schreinermeister",
     "Tischler",
     "Holzkonstruktion",
+    "Küchenmonteur",
+    "Möbelmonteur",
+    "Fenstermonteur",
+    "Türenmonteur",
+    "Einbauschrank",
+    "Holzhandwerker",
+    "Holzverarbeitung",
+    "Innenausbau Monteur",
+    "Bauschreiner",
+    "Maschinenführer Holz",
+    "Holztechniker",
+    "Projektleiter Schreinerei",
+    "Bauleiter Innenausbau",
+    "Schreiner Montage",
+    "Werkstatt Schreiner",
+    "Restaurator Holz",
+    "Messebau",
 ]
 
 DEFAULT_LOCATIONS = [
@@ -385,6 +436,14 @@ DEFAULT_LOCATIONS = [
     "Lugano, Schweiz",
     "Chur, Schweiz",
     "Sion, Schweiz",
+    "Olten, Schweiz",
+    "Thun, Schweiz",
+    "Frauenfeld, Schweiz",
+    "Zug, Schweiz",
+    "Schaffhausen, Schweiz",
+    "Solothurn, Schweiz",
+    "Rapperswil, Schweiz",
+    "Baden, Schweiz",
 ]
 
 
@@ -684,7 +743,7 @@ def main():
     parser = argparse.ArgumentParser(description="Scrape Swiss carpentry/woodworking jobs")
     parser.add_argument("--query", type=str, help="Single search query")
     parser.add_argument("--location", type=str, help="Single location")
-    parser.add_argument("--results", type=int, default=100, help="Results per query/location combo")
+    parser.add_argument("--results", type=int, default=50, help="Results per query/location combo")
     parser.add_argument("--quick", action="store_true", help="Quick mode: single query only")
     parser.add_argument("--chunk", type=int, default=0, help="Chunk index (0-based) for splitting search terms")
     parser.add_argument("--total-chunks", type=int, default=1, help="Total number of chunks to split search terms into")
