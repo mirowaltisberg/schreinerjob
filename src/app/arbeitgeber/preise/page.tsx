@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Preise & Pakete",
   description:
     "Erfahren Sie mehr über die Inseratepreise und Pakete auf schreinerjob.ch — der spezialisierten Jobbörse für Schreiner-Fachkräfte.",
+  alternates: {
+    canonical: "/arbeitgeber/preise",
+  },
 };
 
 export default function PreisePage() {

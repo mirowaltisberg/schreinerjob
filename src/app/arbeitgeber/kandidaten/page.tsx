@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "Kandidatenzugang",
   description:
     "Erhalten Sie Zugang zum Kandidatenpool von schreinerjob.ch — qualifizierte Schreiner-Fachkräfte in der Schweiz.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function KandidatenPage() {
