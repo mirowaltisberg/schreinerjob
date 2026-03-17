@@ -39,7 +39,6 @@ const coordinateCache = new Map<string, Coordinate | null>();
 const POSITIVE_KEYWORDS = [
   "schreiner",
   "schreinerei",
-  "zimmermann",
   "holz",
   "holzbau",
   "möbel",
@@ -86,8 +85,6 @@ const NEGATIVE_KEYWORDS = [
 const CORE_TITLE_KEYWORDS = [
   "schreiner",
   "schreinerei",
-  "zimmermann",
-  "zimmerfrau",
   "holz",
   "holzbau",
   "holzbauer",
@@ -148,6 +145,72 @@ const HARD_NEGATIVE_TITLE_KEYWORDS = [
   "data",
   "hr",
   "human resources",
+];
+
+/** Keywords that uniquely identify THIS trade (schreiner) */
+const TRADE_IDENTITY_KEYWORDS = [
+  "schreiner",
+  "schreinerei",
+  "tischler",
+  "möbel",
+  "möbelschreiner",
+  "möbelbau",
+  "küchenbau",
+  "küchenbauer",
+  "küchenmonteur",
+  "fensterbau",
+  "fensterbauer",
+  "fenstermonteur",
+  "montageschreiner",
+  "cnc-holz",
+  "furnieren",
+  "holzbearbeitung",
+  "innenausbau",
+  "innenausbauer",
+];
+
+/** Primary keywords from OTHER trades — reject if title matches these without any TRADE_IDENTITY match */
+const OTHER_TRADE_KEYWORDS = [
+  "elektro",
+  "elektriker",
+  "elektroinstallateur",
+  "elektromonteur",
+  "elektroniker",
+  "automatiker",
+  "schaltanlagen",
+  "photovoltaik",
+  "starkstrom",
+  "schwachstrom",
+  "sanitär",
+  "sanitaer",
+  "sanitärinstallateur",
+  "heizung",
+  "heizungsinstallateur",
+  "heizungsmonteur",
+  "klima",
+  "klimatechniker",
+  "kälte",
+  "kältetechniker",
+  "lüftung",
+  "lüftungsmonteur",
+  "spengler",
+  "bauspengler",
+  "fassadenspengler",
+  "dachdecker",
+  "dachdeckerin",
+  "zimmermann",
+  "bodenleger",
+  "parkettleger",
+  "plattenleger",
+  "fliesen",
+  "fliesenleger",
+  "estrich",
+  "gärtner",
+  "gaertner",
+  "garten",
+  "landschaftsgärtner",
+  "baumpflege",
+  "gartenbau",
 ];
 
 interface NormalizedParams {
@@ -211,10 +274,17 @@ function scoreScrapedJob(job: ScrapedJob): number {
     `${job.description} ${job.fullDescription} ${requirements.join(" ")} ${responsibilities.join(" ")}`
   );
 
+  const titleTradeIdentityHits = countKeywordHits(title, TRADE_IDENTITY_KEYWORDS);
+  const titleOtherTradeHits = countKeywordHits(title, OTHER_TRADE_KEYWORDS);
   const titleSignalHits = countKeywordHits(title, CORE_TITLE_KEYWORDS);
   const hardNegativeTitleHits = countKeywordHits(title, HARD_NEGATIVE_TITLE_KEYWORDS);
   const bodySignalHits = countKeywordHits(body, POSITIVE_KEYWORDS);
   const bodyNegativeHits = countKeywordHits(body, NEGATIVE_KEYWORDS);
+
+  // Title mentions another trade but NOT this trade → reject
+  if (titleOtherTradeHits > 0 && titleTradeIdentityHits === 0) {
+    return -100;
+  }
 
   if (hardNegativeTitleHits > 0 && titleSignalHits === 0) {
     return -100;
