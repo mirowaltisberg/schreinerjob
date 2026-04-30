@@ -42,8 +42,7 @@ export function buildJobPostingSchema(job: JobListing) {
     industry: "Schreinerei & Holzbau",
     hiringOrganization: {
       "@type": "Organization",
-      name: job.company?.trim() || "Arbeitgeber auf schreinerjob.ch",
-      ...(job.companyUrl ? { sameAs: job.companyUrl } : {}),
+      name: "Arbeitgeber via schreinerjob.ch",
     },
     jobLocation: {
       "@type": "Place",
