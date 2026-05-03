@@ -14,12 +14,16 @@ import {
   getLandingPath,
   getRelatedLandingPages,
   TOP_LANDING_PAGES,
+  toCantonSlug,
+  toRoleSlug,
   type LandingPageConfig,
 } from "@/lib/landing-pages";
 import { searchJobListings } from "@/lib/job-catalog";
 import type { JobListing } from "@/lib/job-types";
 import { estimateSalary, formatSalaryRange } from "@/lib/salary-estimates";
 import { buildJobPostingSchema } from "@/lib/job-schema";
+import { getEditorialContent } from "@/data/editorial/schreinerjob";
+import { EditorialIntro } from "@/app/_components/editorial-intro";
 
 export const revalidate = 3600;
 
@@ -156,6 +160,7 @@ export default async function LandingRolePage({ params }: LandingPageProps) {
 
   const relatedPages = getRelatedLandingPages(config, 8);
   const faqSchema = buildFaqSchema(config);
+  const editorial = getEditorialContent(toRoleSlug(config.role), toCantonSlug(config.canton));
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -306,15 +311,25 @@ export default async function LandingRolePage({ params }: LandingPageProps) {
               <p className="text-sm text-slate-700">{config.career.split(".")[0]}.</p>
             </div>
           </div>
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
-              Arbeitsmarkt in {config.canton}
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              {config.cantonContext} Das durchschnittliche Jahresgehalt für {config.role} in der Schweiz liegt bei {config.salaryRange}. {config.career}
-            </p>
-          </div>
+          {!editorial && (
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                Arbeitsmarkt in {config.canton}
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                {config.cantonContext} Das durchschnittliche Jahresgehalt für {config.role} in der Schweiz liegt bei {config.salaryRange}. {config.career}
+              </p>
+            </div>
+          )}
         </section>
+
+        {editorial && (
+          <EditorialIntro
+            role={config.role}
+            canton={config.canton}
+            content={editorial}
+          />
+        )}
 
         {/* FAQ section */}
         {config.faqs && config.faqs.length > 0 && (
