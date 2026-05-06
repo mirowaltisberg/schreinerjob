@@ -19,7 +19,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.schreinerjob.c
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+    default: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
     template: "%s | schreinerjob.ch",
   },
   description:
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Stellen Schreinerbranche Schweiz",
   ],
   openGraph: {
-    title: "Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
     description:
       "Finde aktuelle Schreiner Jobs in der Schweiz. Stellen für Schreiner EFZ, Zimmermann, Innenausbauer & mehr. Jetzt Lebenslauf einreichen.",
     type: "website",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
     description:
       "Finde aktuelle Schreiner Jobs in der Schweiz. Stellen für Schreiner EFZ, Zimmermann, Innenausbauer & mehr. Jetzt Lebenslauf einreichen.",
   },

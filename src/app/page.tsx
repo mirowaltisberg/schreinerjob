@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { buildJobPostingSchema } from "@/lib/job-schema";
 
 export const metadata: Metadata = {
-  title: "Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+  title: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
   description:
     "Finde aktuelle Schreiner Jobs in der Schweiz. Stellen für Schreiner EFZ, Zimmermann, Innenausbauer & mehr. Jetzt Lebenslauf einreichen.",
   alternates: { canonical: "/" },
