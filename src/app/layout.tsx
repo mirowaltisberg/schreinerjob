@@ -19,11 +19,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.schreinerjob.c
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+    default: "Schreiner Jobs Schweiz 2026 | Stellen, Lohn & Ausbildung",
     template: "%s | schreinerjob.ch",
   },
   description:
-    "Finde aktuelle Schreiner Jobs in der Schweiz. Stellen für Schreiner EFZ, Zimmermann, Innenausbauer & mehr. Jetzt Lebenslauf einreichen.",
+    "Schreiner Jobs Schweiz: Schreiner EFZ, Möbelschreiner, Bauschreiner, Innenausbau, CNC. Lohn, Ausbildung, GAV — tägliche Updates aus der ganzen Schweiz.",
   keywords: [
     "Schreinerjobs",
     "Schreinerjobs Schweiz",
