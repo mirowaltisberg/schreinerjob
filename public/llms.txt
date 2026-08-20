@@ -1,33 +1,21 @@
 # schreinerjob.ch
 
-> Die spezialisierte Jobbörse für Schreiner-Fachkräfte in der Schweiz.
+> Stellenangebote für Schreiner-Fachkräfte in der Schweiz.
 
-schreinerjob.ch ist eine Nischen-Jobbörse für die Schweizer Schreinerbranche. Die Plattform richtet sich an Schreiner EFZ, Zimmermänner, Innenausbauer, Möbelschreiner, Küchenbauer, Fensterbauer, Holzbauer, Werkstattleiter, CNC-Holzbearbeiter, Montageschreiner, Schreinermeister und Bauleiter Holzbau.
+schreinerjob.ch bündelt öffentlich zugängliche Stelleninserate mit klarem Bezug zum Schreinergewerk. Dazu gehören insbesondere Stellen für Schreinerinnen und Schreiner sowie klar bezeichnete Funktionen in Montage, Möbelbau, CNC, AVOR und Projektleitung Schreinerei.
 
 ## Wichtige Seiten
 
-- [Startseite](https://schreinerjob.ch/): Jobsuche mit Filtern nach Beruf, Ort, Umkreis, Pensum
-- [Schreiner EFZ Jobs Zürich](https://schreinerjob.ch/schreinerjobs/schreiner-efz/zh): Beispiel-Landingpage
-- [Sitemap](https://schreinerjob.ch/sitemap.xml): Alle verfügbaren Seiten
+- [Startseite und Stellensuche](https://schreinerjob.ch/)
+- [Ausbildung Schreiner EFZ](https://schreinerjob.ch/schreiner-ausbildung)
+- [Lohn und GAV richtig einordnen](https://schreinerjob.ch/lohn-schreiner-schweiz)
+- [Sitemap](https://schreinerjob.ch/sitemap.xml)
 
-## Kerninformationen
+## Quellenstandard
 
-- **Sprache**: Deutsch (Schweizer Markt)
-- **Regionen**: Alle Schweizer Kantone — Zürich, Bern, Basel, Aargau, St. Gallen, Luzern, Solothurn, Zug und weitere
-- **Berufe**: Schreiner EFZ, Zimmermann EFZ, Innenausbauer, Möbelschreiner, Küchenbauer, Fensterbauer, Holzbauer, Werkstattleiter, CNC-Holzbearbeiter, Montageschreiner, Schreinermeister, Bauleiter Holzbau
-- **Lohndaten (Richtwerte, CHF/Jahr)**:
-  - Schreinermeister: 85'000 – 110'000
-  - Bauleiter Holzbau: 85'000 – 110'000
-  - Werkstattleiter: 80'000 – 100'000
-  - Schreiner EFZ: 65'000 – 80'000
-  - Zimmermann EFZ: 65'000 – 82'000
-  - Innenausbauer: 65'000 – 80'000
-  - Möbelschreiner: 62'000 – 78'000
-  - Küchenbauer: 65'000 – 80'000
-  - Fensterbauer: 62'000 – 78'000
-  - CNC-Holzbearbeiter: 68'000 – 85'000
+Berufs- und Ausbildungsinformationen stützen sich auf offizielle Schweizer Quellen wie berufsberatung.ch und den VSSM. Hinweise zu Gesamtarbeitsverträgen verlinken auf die aktuelle Übersicht des Staatssekretariats für Wirtschaft SECO. schreinerjob.ch publiziert keine eigenen pauschalen Lohnbänder.
 
 ## Kontakt
 
 - **Website**: https://schreinerjob.ch
-- **Branche**: Personalvermittlung / Jobbörse — Schreinerbranche Schweiz
+- **E-Mail**: info@schreinerjob.ch

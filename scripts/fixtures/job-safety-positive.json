@@ -1,0 +1,79 @@
+{
+  "jobs": [
+    {
+      "trade": "schreiner",
+      "id": "scraped-schreiner-54e334659800",
+      "jobUrl": "https://jobs.example.ch/schreiner-1",
+      "source": "indeed",
+      "title": "Schreiner EFZ",
+      "company": "Holzatelier Beispiel AG",
+      "location": "Zürich, Zürich",
+      "type": "Vollzeit",
+      "workload": "100%",
+      "datePosted": "$TODAY",
+      "description": "Fertigung von Möbeln und Innenausbauten in der Werkstatt.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Schreiner/in EFZ"
+    },
+    {
+      "trade": "schreiner",
+      "id": "scraped-schreiner-42b79cb87fd0",
+      "jobUrl": "https://jobs.example.ch/schreiner-2",
+      "source": "linkedin",
+      "title": "Projektleiter Schreinerei 80–100%",
+      "company": "Schreinerei Muster GmbH",
+      "location": "Bern, Bern",
+      "type": "Festanstellung",
+      "workload": "80-100%",
+      "datePosted": "$TODAY",
+      "description": "Koordination von Schreinerprojekten, Terminen und Fachpartnern vom Start bis zur Übergabe.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Projektleiter/in Schreinerei"
+    },
+    {
+      "trade": "schreiner",
+      "id": "scraped-schreiner-156a446d97e5",
+      "jobUrl": "https://jobs.example.ch/schreiner-3",
+      "source": "google",
+      "title": "CNC-Maschinist Schreinerei",
+      "company": "Holzwerk Beispiel AG",
+      "location": "Basel, Basel-Stadt",
+      "type": "Vollzeit",
+      "workload": "100%",
+      "datePosted": "$TODAY",
+      "description": "Einrichten und Bedienen eines CNC-Bearbeitungszentrums für Holzwerkstoffe.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "CNC-Maschinist/in Schreinerei"
+    },
+    {
+      "trade": "schreiner",
+      "id": "scraped-schreiner-d06115e90780",
+      "jobUrl": "https://jobs.example.ch/schreiner-4",
+      "source": "indeed",
+      "title": "AVOR Schreiner",
+      "company": "Montage Muster AG",
+      "location": "Luzern, Luzern",
+      "type": "Vollzeit",
+      "workload": "80-100%",
+      "datePosted": "$TODAY",
+      "description": "Arbeitsvorbereitung, Stücklisten und Werkstattpläne für Schreinereiaufträge.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "AVOR/Konstruktion Schreinerei"
+    },
+    {
+      "trade": "schreiner",
+      "id": "scraped-schreiner-e44bfc37e123",
+      "jobUrl": "https://jobs.example.ch/schreiner-efz-token",
+      "source": "indeed",
+      "title": "Montageschreiner EFZPlus",
+      "company": "Token Test AG",
+      "location": "Zug, Zug",
+      "type": "Vollzeit",
+      "workload": "100%",
+      "datePosted": "$TODAY",
+      "description": "Montage von Küchen, Möbeln und Innenausbauten im Einsatzgebiet Zug.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Montageschreiner/in"
+    }
+  ]
+}

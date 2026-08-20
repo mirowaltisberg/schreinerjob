@@ -1,0 +1,98 @@
+{
+  "trade": "schreiner",
+  "idPattern": "^scraped-schreiner-[0-9a-f]{12}$",
+  "allowedSources": ["google", "indeed", "linkedin"],
+  "tradeContextPatterns": [
+    "schreiner", "schreinerei", "tischler", "möbelbau", "moebelbau",
+    "innenausbau", "küchenbau", "kuechenbau", "bankschrein", "montageschrein"
+  ],
+  "hardNegativeTitlePatterns": [
+    "pflege", "spitex", "gesundheit", "sozial", "verkauf", "sales", "marketing",
+    "jurist", "anwalt", "fahrer", "chauffeur", "logistik", "reinigung", "koch",
+    "arzt", "medizin", "software", "developer", "data scientist", "human resources",
+    "product manager", "product owner", "frontend", "backend", "devops", "buchhalt",
+    "accounting", "controller", "internship", "ingénieur", "technicien", "électricien",
+    "elettricista", "disegnatore"
+  ],
+  "otherTradeTitlePatterns": [
+    "elektro", "elektriker", "sanitär", "sanitaer", "heizung", "heizungsinstallateur",
+    "lüftung", "lueftung", "kälte", "kaelte", "klima", "spengler", "dachdecker",
+    "zimmermann", "zimmerin", "holzbau", "bodenleger", "plattenleger", "gärtner",
+    "gaertner", "metallbauer", "maurer", "maler", "hlks", "hvac"
+  ],
+  "highSpecificityTitles": [
+    { "pattern": "möbelschreiner|moebelschreiner|möbeltischler|moebeltischler", "publicTitle": "Möbelschreiner/in", "profile": "bench" },
+    { "pattern": "bankschreiner|werkstattschreiner", "publicTitle": "Bankschreiner/in", "profile": "bench" },
+    { "pattern": "montageschreiner|schreinermonteur", "publicTitle": "Montageschreiner/in", "profile": "assembly" },
+    { "pattern": "^(?:schreiner(?:in|/in)?|tischler(?:in)?)(?:\\s|$)", "publicTitle": "Schreiner/in", "profile": "bench" }
+  ],
+  "broadTitlesRequiringTradeContext": [
+    { "pattern": "projektleit", "publicTitle": "Projektleiter/in Schreinerei", "profile": "leadership" },
+    { "pattern": "produktionsleit|werkstattleit|teamleit", "publicTitle": "Teamleiter/in Schreinerei", "profile": "leadership" },
+    { "pattern": "avor|arbeitsvorbereit|konstrukteur|zeichner|cad", "publicTitle": "AVOR/Konstruktion Schreinerei", "profile": "planning" },
+    { "pattern": "cnc|maschinist", "publicTitle": "CNC-Maschinist/in Schreinerei", "profile": "cnc" },
+    { "pattern": "küchenmonteur|kuechenmonteur|möbelmonteur|moebelmonteur|monteur", "publicTitle": "Montageschreiner/in", "profile": "assembly" }
+  ],
+  "profiles": {
+    "leadership": {
+      "responsibilities": [
+        "Schreinereiprojekte von der Offerte bis zur Montage koordinieren",
+        "Termine, Qualität und Materialfluss zwischen Werkstatt und Baustelle steuern",
+        "Absprachen mit Kundschaft, Planung und Montageteams führen"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung im Schreinerhandwerk",
+        "Erfahrung in Projektleitung, AVOR oder Werkstattkoordination",
+        "Selbstständige, zuverlässige und lösungsorientierte Arbeitsweise"
+      ]
+    },
+    "planning": {
+      "responsibilities": [
+        "Werkstattpläne, Stücklisten und Produktionsunterlagen erstellen",
+        "Beschläge, Materialien und konstruktive Details koordinieren",
+        "Aufträge für Fertigung und Montage vollständig vorbereiten"
+      ],
+      "requirements": [
+        "Schreinerausbildung mit Erfahrung in AVOR oder Konstruktion",
+        "Sicherer Umgang mit CAD, Massaufnahmen und technischen Unterlagen",
+        "Strukturierte, präzise und teamorientierte Arbeitsweise"
+      ]
+    },
+    "cnc": {
+      "responsibilities": [
+        "CNC-Bearbeitungszentren für Holzwerkstoffe einrichten und bedienen",
+        "Programme, Werkzeuge und Werkstücke vor Produktionsstart prüfen",
+        "Qualität und Masshaltigkeit der gefertigten Teile dokumentieren"
+      ],
+      "requirements": [
+        "Ausbildung oder Praxis in Schreinerei und CNC-Holzbearbeitung",
+        "Gutes Verständnis für Fertigungszeichnungen und Werkstoffe",
+        "Sorgfältige und sicherheitsbewusste Arbeitsweise"
+      ]
+    },
+    "assembly": {
+      "responsibilities": [
+        "Möbel, Küchen und Innenausbauten auf der Baustelle montieren",
+        "Bauteile einpassen, Beschläge justieren und Arbeiten sauber abschliessen",
+        "Massaufnahmen und Übergaben mit Projektleitung und Kundschaft abstimmen"
+      ],
+      "requirements": [
+        "Abgeschlossene Schreinerausbildung oder fundierte Montageerfahrung",
+        "Sicherer Umgang mit Handmaschinen, Plänen und Massaufnahmen",
+        "Zuverlässiges Auftreten und selbstständige Arbeitsweise"
+      ]
+    },
+    "bench": {
+      "responsibilities": [
+        "Möbel, Türen und Innenausbauteile nach Werkstattplan fertigen",
+        "Massivholz, Plattenwerkstoffe und Beschläge fachgerecht bearbeiten",
+        "Masshaltigkeit, Oberfläche und Funktion vor der Auslieferung prüfen"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung als Schreiner/in oder gleichwertige Praxis",
+        "Sicherer Umgang mit stationären Maschinen und Handwerkzeugen",
+        "Präzise, verantwortungsbewusste und qualitätsorientierte Arbeitsweise"
+      ]
+    }
+  }
+}

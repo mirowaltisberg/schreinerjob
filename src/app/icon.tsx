@@ -13,8 +13,8 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#8B5E3C",
-          borderRadius: "10px",
+          background: "#f7edda",
+          borderRadius: "6px",
         }}
       >
         <svg
@@ -23,9 +23,8 @@ export default function Icon() {
           width="33"
           height="33"
         >
-          {/* Hand saw */}
-          <path d="M8 36l18-18h14v4H28L12 40z" fill="white" />
-          <path d="M26 18l-2-2 2-2 2 2-2 2zm4-4l-2-2 2-2 2 2-2 2zm4-4l-2-2 2-2 2 2-2 2z" fill="white" opacity="0.7" />
+          <path d="M5 9h13l3 7 3-7h13v24H24l-3-7-3 7H5z" fill="#d6a85c" stroke="#5f3528" strokeWidth="3" />
+          <path d="M9 14h8M25 14h8M9 28h8M25 28h8" fill="none" stroke="#315a45" strokeWidth="2" />
         </svg>
       </div>
     ),

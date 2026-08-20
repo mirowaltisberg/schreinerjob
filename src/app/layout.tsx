@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
@@ -7,44 +6,40 @@ import { JsonLd } from "@/components/json-ld";
 import { HapticProvider } from "@/components/haptic-provider";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.schreinerjob.ch";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://schreinerjob.ch";
+const ANALYTICS_ENABLED = process.env.ANALYTICS_ENABLED === "true";
+const GA_ID = ANALYTICS_ENABLED ? process.env.NEXT_PUBLIC_GA_ID : undefined;
+const FB_PIXEL_ID = ANALYTICS_ENABLED ? process.env.NEXT_PUBLIC_FB_PIXEL_ID : undefined;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Schreiner Jobs Schweiz 2026 | Stellen, Lohn & Ausbildung",
+    default: "Schreiner Jobs Schweiz | Stellen für Schreiner-Fachkräfte",
     template: "%s | schreinerjob.ch",
   },
   description:
-    "Schreiner Jobs Schweiz: Schreiner EFZ, Möbelschreiner, Bauschreiner, Innenausbau, CNC. Lohn, Ausbildung, GAV — tägliche Updates aus der ganzen Schweiz.",
+    "Finde Stellen für Schreiner, Möbel- und Bankschreinerei, Montage, CNC, AVOR und Projektleitung Schreinerei in der Schweiz.",
   keywords: [
     "Schreinerjobs",
     "Schreinerjobs Schweiz",
-    "Schreiner EFZ Jobs",
-    "Zimmermann Jobs",
-    "Innenausbauer Jobs",
-    "Möbelschreiner Jobs",
-    "Küchenbauer Jobs",
-    "Fensterbauer Jobs",
-    "Holzbau Jobs Schweiz",
-    "Bau- und Möbelschreiner",
-    "Schreinermeister",
-    "CNC-Holzbearbeitung",
-    "Werkstattleiter Schreinerei",
+    "Schreiner Jobs",
+    "Projektleiter Schreinerei",
     "Montageschreiner",
+    "AVOR Schreinerei Jobs",
+    "CNC Schreinerei Jobs",
     "Stellen Schreinerbranche Schweiz",
+    "Schreiner Job Schweiz",
+    "Schreiner Stellen Schweiz",
+    "Schreiner Stellenangebote",
+    "Montageschreiner Jobs Schweiz",
+    "Schreiner Temporär",
+    "Schreiner Festanstellung",
+    "Schreiner Lohn Schweiz",
   ],
   openGraph: {
-    title: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "Schreiner Jobs Schweiz | Stellenangebote",
     description:
-      "Finde aktuelle Schreiner Jobs in der Schweiz. Stellen für Schreiner EFZ, Zimmermann, Innenausbauer & mehr. Jetzt Lebenslauf einreichen.",
+      "Finde Stellenangebote für Schreiner EFZ, Montage, Möbelbau, CNC, AVOR und Projektleitung Schreinerei.",
     type: "website",
     url: "/",
     siteName: "schreinerjob.ch",
@@ -52,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "689 Schreiner Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "Schreiner Jobs Schweiz | Stellenangebote",
     description:
-      "Finde aktuelle Schreiner Jobs in der Schweiz. Stellen für Schreiner EFZ, Zimmermann, Innenausbauer & mehr. Jetzt Lebenslauf einreichen.",
+      "Finde Stellenangebote für Schreiner EFZ, Montage, Möbelbau, CNC, AVOR und Projektleitung Schreinerei.",
   },
   alternates: {
     canonical: "/",
@@ -85,16 +80,14 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-// SEO-DECISION: Organization schema placed in root layout so it appears on every page
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "schreinerjob.ch",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/icon.svg`,
   description:
-    "schreinerjob.ch ist die spezialisierte Jobbörse für Schreiner-Fachkräfte in der Schweiz. Finde offene Stellen als Schreiner EFZ, Zimmermann, Innenausbauer, Möbelschreiner und mehr.",
-  foundingDate: "2025",
+    "schreinerjob.ch bündelt Stellenangebote mit klarem Bezug zum Schreinergewerk in der Schweiz.",
   areaServed: {
     "@type": "Country",
     name: "Switzerland",
@@ -104,15 +97,8 @@ const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "customer service",
     availableLanguage: "German",
-    url: `${SITE_URL}/`,
+    url: `${SITE_URL}/kontakt`,
   },
-  sameAs: [
-    "https://www.youtube.com/@schreinerjob",
-    "https://www.facebook.com/schreinerjob",
-    "https://www.instagram.com/schreinerjob",
-    "https://www.linkedin.com/company/schreinerjob",
-    "https://twitter.com/schreinerjob",
-  ],
 };
 
 const websiteSchema = {
@@ -122,7 +108,12 @@ const websiteSchema = {
   url: SITE_URL,
   description:
     "Die spezialisierte Jobbörse für Schreiner-Fachkräfte in der Schweiz.",
-  inLanguage: "de",
+  inLanguage: "de-CH",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({
@@ -131,31 +122,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de-CH">
       <head>
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        {FB_PIXEL_ID && <link rel="dns-prefetch" href="https://connect.facebook.net" />}
       </head>
-      <body lang="de" className={`${plusJakarta.variable} antialiased font-sans bg-slate-50`}>
+      <body lang="de-CH" className="antialiased font-sans">
+        <a className="skip-link" href="#main-content">
+          Zum Inhalt
+        </a>
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
         <HapticProvider>{children}</HapticProvider>
-        <Analytics />
-        <SpeedInsights />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-0000000000"}`}
-          strategy="lazyOnload"
-        />
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`
+        {ANALYTICS_ENABLED && <Analytics />}
+        {ANALYTICS_ENABLED && <SpeedInsights />}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="lazyOnload"
+            />
+            <Script id="gtag-init" strategy="lazyOnload">
+              {`
             window.dataLayer=window.dataLayer||[];
             function gtag(){dataLayer.push(arguments);}
             gtag('js',new Date());
-            gtag('config','${process.env.NEXT_PUBLIC_GA_ID || "G-0000000000"}');
+            gtag('config','${GA_ID}');
           `}
-        </Script>
-        <Script id="fb-pixel" strategy="lazyOnload">
-          {`
+            </Script>
+          </>
+        )}
+        {FB_PIXEL_ID && (
+          <Script id="fb-pixel" strategy="lazyOnload">
+            {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -164,19 +162,23 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID || "0000000000000000"}');
+            fbq('init', '${FB_PIXEL_ID}');
             fbq('track', 'PageView');
           `}
-        </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FB_PIXEL_ID || "0000000000000000"}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
+          </Script>
+        )}
+        {FB_PIXEL_ID && (
+          <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        )}
       </body>
     </html>
   );

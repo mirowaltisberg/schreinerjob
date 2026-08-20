@@ -1,8 +1,5 @@
 import { ImageResponse } from "next/og";
 
-// SEO-DECISION: Apple Touch Icon generated from code to match the brand carpentry icon.
-// This satisfies the Seobility "missing apple-touch-icon" warning.
-
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
@@ -16,7 +13,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#8B5E3C",
+          background: "#5f3528",
           borderRadius: "36px",
         }}
       >
@@ -26,9 +23,8 @@ export default function AppleIcon() {
           width="120"
           height="120"
         >
-          {/* Hand saw */}
-          <path d="M8 36l18-18h14v4H28L12 40z" fill="white" />
-          <path d="M26 18l-2-2 2-2 2 2-2 2zm4-4l-2-2 2-2 2 2-2 2zm4-4l-2-2 2-2 2 2-2 2z" fill="white" opacity="0.7" />
+          <path d="M5 9h13l3 7 3-7h13v24H24l-3-7-3 7H5z" fill="#f7edda" stroke="#d6a85c" strokeWidth="3" />
+          <path d="M9 14h8M25 14h8M9 28h8M25 28h8" fill="none" stroke="#f7edda" strokeWidth="2" />
         </svg>
       </div>
     ),
