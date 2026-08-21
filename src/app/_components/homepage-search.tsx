@@ -243,6 +243,7 @@ function DirectHireOpportunityCard({ opportunity }: { opportunity: DirectHireOpp
           </p>
           <Link
             href={opportunity.contactHref}
+            data-analytics-action={`direct_hire_contact:${opportunity.id}`}
             prefetch={false}
             className="job-card__action inline-flex min-h-11 shrink-0 items-center gap-1 self-start px-1 sm:self-auto"
           >
